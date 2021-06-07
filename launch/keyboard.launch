@@ -1,0 +1,19 @@
+<launch>
+  <!-- Arguments -->
+  <arg name="set_cmd_vel"       default="cmd_vel"/>
+  <arg name="set_lin_vel_step"  default="0.01"/>
+  <arg name="set_ang_vel_step"  default="0.01"/>
+  <arg name="max_lin_vel_x"     default="0.1"/>
+  <arg name="max_lin_vel_y"     default="0.1"/>
+  <arg name="max_lin_vel_z"     default="0.1"/>
+
+  <!-- Gmapping -->
+  <node pkg="chassis_controller" type="chassis_keyboard" name="chassis_controller_keyboard" output="screen">
+    <param name="SET_CMD_VEL" value="$(arg set_cmd_vel)"/>
+    <param name="LIN_VEL_STEP_SIZE" value="$(arg set_lin_vel_step)"/>
+    <param name="ANG_VEL_STEP_SIZE" value="$(arg set_ang_vel_step)"/>
+    <param name="MAX_LIN_VEL_X"  value="$(arg max_lin_vel_x)"/>
+    <param name="MAX_LIN_VEL_Y" value="$(arg max_lin_vel_y)"/>
+    <param name="MAX_ANG_VEL_Z" value="$(arg max_lin_vel_z)"/>
+  </node>
+</launch>
